@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-[#050505] text-white">
@@ -7,6 +9,16 @@ export default function Home() {
       </div>
 
       <main className="relative mx-auto flex min-h-screen w-full max-w-3xl flex-col items-center justify-center px-6 py-24 text-center">
+        <Image
+          src="/logo-legacy-branco.png"
+          alt="Legacy Canoas"
+          width={180}
+          height={180}
+          placeholder="blur"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGD4DwABAgEAffqGIwAAAABJRU5ErkJggg=="
+          className="mb-6 h-auto w-32 sm:w-40"
+          priority
+        />
         <span className="mb-6 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-white/80">
           Legacy Canoas
         </span>
