@@ -23,7 +23,7 @@ export default function Home() {
           Legacy Canoas
         </span>
         <h1 className="text-4xl font-extrabold tracking-tight sm:text-6xl">
-          Estamos preparando algo
+          Estamos preparando algo{" "}
           <span className="bg-gradient-to-r from-[#FF5F1F] to-[#4F46E5] bg-clip-text text-transparent">
             simplesmente incrível
           </span>
