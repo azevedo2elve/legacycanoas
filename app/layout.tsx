@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "Legacy Canoas",
   description: "Legacy Canoas",
   icons: {
-    icon: "/logo-legacy-preto.png",
+    icon: "/logo-legacy-branco-fundo-preto.jpg",
   },
 };
 
