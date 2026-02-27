@@ -1,4 +1,7 @@
 import Image from "next/image";
+import HighlightCard from "@/components/HighlightCard";
+import SiteFooter from "@/components/SiteFooter";
+import SiteNav from "@/components/SiteNav";
 
 const highlights = [
   {
@@ -28,6 +31,7 @@ const weeklyMoments = [
     title: "GC Legacy",
     description: "Grupos menores para conversa, discipulado e oração.",
     detail: "Durante a semana",
+    href: "/groups",
   },
 ];
 
@@ -41,6 +45,7 @@ const upcoming = [
     title: "Retiro de Jovens",
     description: "Dias intensos de conexão, descanso e avivamento.",
     date: "01, 02 e 03 de maio 2026",
+    href: "/camp",
   },
   // {
   //   title: "Legacy Sessions",
@@ -59,41 +64,11 @@ export default function Home() {
       </div>
 
       <div className="relative mx-auto flex min-h-screen w-full max-w-6xl flex-col px-6 pb-16 pt-10">
-        <header className="flex flex-col items-center justify-between gap-6 text-center sm:flex-row sm:text-left">
-          <div className="flex items-center gap-3">
-            <Image
-              src="/logo-legacy-branco.png"
-              alt="Legacy Canoas"
-              width={72}
-              height={72}
-              placeholder="blur"
-              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGD4DwABAgEAffqGIwAAAABJRU5ErkJggg=="
-              className="h-12 w-12"
-              priority
-            />
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.4em] text-white/60">
-                Jovens Lagoinha Canoas
-              </p>
-              <p className="text-lg font-semibold">Legacy</p>
-            </div>
-          </div>
-
-          <nav className="flex flex-wrap items-center justify-center gap-4 text-sm text-white/70 sm:justify-end">
-            <a className="transition hover:text-white" href="#sobre">
-              Sobre
-            </a>
-            <a className="transition hover:text-white" href="#encontros">
-              Encontros
-            </a>
-            <a className="transition hover:text-white" href="#agenda">
-              Agenda
-            </a>
-            <a className="transition hover:text-white" href="#contato">
-              Contato
-            </a>
-          </nav>
-        </header>
+        <SiteNav
+          title="Legacy"
+          subtitle="Jovens Lagoinha Canoas"
+          logoSrc="/logo-legacy-branco.png"
+        />
 
         <main className="flex flex-1 flex-col gap-24 pb-10 pt-16">
           <section className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
@@ -127,37 +102,36 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="relative">
-              <div className="absolute -inset-6 rounded-[32px] border border-white/10 bg-white/5 shadow-[0_20px_60px_-30px_rgba(79,70,229,0.6)]" />
-              <div className="relative rounded-[28px] border border-white/10 bg-[#0C0C0C]/80 p-8">
-                <Image
-                  src="/logo-legacy-branco-fundo-preto.jpg"
-                  alt="Logo Legacy Canoas"
-                  width={360}
-                  height={360}
-                  placeholder="blur"
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAQEBUQEA8QDw8PDQ8PEA8PEA8PFREWFhURFRUYHSggGBolGxUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGy0lICUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAKAAoAMBIgACEQEDEQH/xAAXAAEAAwAAAAAAAAAAAAAAAAAABAUG/8QAFxEBAQEBAAAAAAAAAAAAAAAAAQACIf/aAAwDAQACEAMQAAABy9T/xAAXEAADAQAAAAAAAAAAAAAAAAAAAREx/9oACAEBAAEFAmOeX//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABcQAQEBAQAAAAAAAAAAAAAAAAERABH/2gAIAQEABj8Cxl7/xAAYEAADAQEAAAAAAAAAAAAAAAAAAREhQf/aAAgBAQABPyHie4n/2gAMAwEAAgADAAAAEOP/xAAXEQEAAwAAAAAAAAAAAAAAAAAAAREx/9oACAEDAQE/EGyP/8QAFhEBAQEAAAAAAAAAAAAAAAAAABEB/9oACAECAQE/EPi//8QAHBABAAICAwAAAAAAAAAAAAAAAAERIQAxQVFh/9oACAEBAAE/EHvuMNKqRrqk7qk32rDDat//2Q=="
-                  className="h-auto w-full rounded-2xl"
-                  priority
-                />
-                <div className="mt-6 grid gap-4 text-sm text-white/70 sm:grid-cols-2">
-                  <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                    <p className="text-xs uppercase tracking-[0.25em] text-white/60">
-                      Visão
-                    </p>
-                    <p className="mt-2 text-sm font-semibold text-white">
-                      Formar jovens apaixonados por Jesus e pela cidade.
-                    </p>
-                  </div>
-                  <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                    <p className="text-xs uppercase tracking-[0.25em] text-white/60">
-                      Cultura
-                    </p>
-                    <p className="mt-2 text-sm font-semibold text-white">
-                      Familia, honra, autenticidade e servico.
-                    </p>
-                  </div>
+            <div className="relative rounded-[32px] border border-white/10 bg-white/5 shadow-[0_20px_60px_-30px_rgba(79,70,229,0.6)]">
+              <div className="rounded-[28px] border border-white/10 bg-[#0C0C0C]/80 p-8">
+              <Image
+                src="/logo-legacy-branco-fundo-preto.jpg"
+                alt="Logo Legacy Canoas"
+                width={360}
+                height={360}
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAQEBUQEA8QDw8PDQ8PEA8PEA8PFREWFhURFRUYHSggGBolGxUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGy0lICUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAKAAoAMBIgACEQEDEQH/xAAXAAEAAwAAAAAAAAAAAAAAAAAABAUG/8QAFxEBAQEBAAAAAAAAAAAAAAAAAQACIf/aAAwDAQACEAMQAAABy9T/xAAXEAADAQAAAAAAAAAAAAAAAAAAAREx/9oACAEBAAEFAmOeX//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABcQAQEBAQAAAAAAAAAAAAAAAAERABH/2gAIAQEABj8Cxl7/xAAYEAADAQEAAAAAAAAAAAAAAAAAAREhQf/aAAgBAQABPyHie4n/2gAMAwEAAgADAAAAEOP/xAAXEQEAAwAAAAAAAAAAAAAAAAAAAREx/9oACAEDAQE/EGyP/8QAFhEBAQEAAAAAAAAAAAAAAAAAABEB/9oACAECAQE/EPi//8QAHBABAAICAwAAAAAAAAAAAAAAAAERIQAxQVFh/9oACAEBAAE/EHvuMNKqRrqk32rDDat//2Q=="
+                className="h-auto w-full rounded-2xl"
+                priority
+              />
+              <div className="mt-6 grid gap-4 text-sm text-white/70 sm:grid-cols-2">
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <p className="text-xs uppercase tracking-[0.25em] text-white/60">
+                  Visão
+                </p>
+                <p className="mt-2 text-sm font-semibold text-white">
+                  Formar jovens apaixonados por Jesus e pela cidade.
+                </p>
                 </div>
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <p className="text-xs uppercase tracking-[0.25em] text-white/60">
+                  Cultura
+                </p>
+                <p className="mt-2 text-sm font-semibold text-white">
+                  Familia, honra, autenticidade e servico.
+                </p>
+                </div>
+              </div>
               </div>
             </div>
           </section>
@@ -175,13 +149,12 @@ export default function Home() {
             </div>
             <div className="grid gap-4">
               {highlights.map((item) => (
-                <div
+                <HighlightCard
                   key={item.title}
-                  className="rounded-2xl border border-white/10 bg-white/5 p-5"
-                >
-                  <h3 className="text-base font-semibold text-white">{item.title}</h3>
-                  <p className="mt-2 text-sm text-white/70">{item.description}</p>
-                </div>
+                  title={item.title}
+                  description={item.description}
+                  variant="compact"
+                />
               ))}
             </div>
           </section>
@@ -196,18 +169,14 @@ export default function Home() {
             </div>
             <div className="grid gap-6 md:grid-cols-3">
               {weeklyMoments.map((item) => (
-                <div
+                <HighlightCard
                   key={item.title}
-                  className="rounded-3xl border border-white/10 bg-white/5 p-6 transition hover:-translate-y-1 hover:border-white/25"
-                >
-                  <p className="text-xs uppercase tracking-[0.25em] text-white/60">
-                    {item.detail}
-                  </p>
-                  <h3 className="mt-4 text-lg font-semibold text-white">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-white/70">{item.description}</p>
-                </div>
+                  title={item.title}
+                  description={item.description}
+                  eyebrow={item.detail}
+                  href={item.href}
+                  interactive
+                />
               ))}
             </div>
           </section>
@@ -222,18 +191,14 @@ export default function Home() {
             </div>
             <div className="grid gap-4 lg:grid-cols-3">
               {upcoming.map((item) => (
-                <div
+                <HighlightCard
                   key={item.title}
-                  className="rounded-3xl border border-white/10 bg-white/5 p-6"
-                >
-                  <p className="text-xs uppercase tracking-[0.25em] text-white/60">
-                    {item.date}
-                  </p>
-                  <h3 className="mt-4 text-lg font-semibold text-white">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-white/70">{item.description}</p>
-                </div>
+                  title={item.title}
+                  description={item.description}
+                  eyebrow={item.date}
+                  href={item.href}
+                  interactive
+                />
               ))}
             </div>
           </section>
@@ -270,9 +235,7 @@ export default function Home() {
           </section>
         </main>
 
-        <footer className="mt-auto border-t border-white/10 py-8 text-center text-xs uppercase tracking-[0.25em] text-white/50">
-          Legacy Canoas · Jovens Lagoinha Canoas
-        </footer>
+        <SiteFooter label="Legacy Canoas · Jovens Lagoinha Canoas" />
       </div>
     </div>
   );
